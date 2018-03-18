@@ -1,3 +1,7 @@
+html {
+  font-size: 62.5%; /* 1em = 10px on default browser settings */
+}
+
 html,
 body {
   height: 100%;
