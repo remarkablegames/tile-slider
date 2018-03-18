@@ -151,8 +151,8 @@ export default class TileSlider extends Component {
     const { puzzle, size } = this.state;
 
     return (
-      <div>
-        <table>
+      <div className="text-center">
+        <table className="block-center">
           <tbody>
             {puzzle &&
               puzzle.map((rows, y) => (
@@ -160,6 +160,7 @@ export default class TileSlider extends Component {
                   {rows.map((value, x) => (
                     <td key={x}>
                       <button
+                        className="TileSlider__button"
                         data-value={value}
                         data-x={x}
                         data-y={y}
@@ -179,10 +180,11 @@ export default class TileSlider extends Component {
         <br />
         <br />
 
-        <form onSubmit={this.newPuzzle}>
+        <form className="TileSlider__form" onSubmit={this.newPuzzle}>
           <label>
             Size (Row/Column):&nbsp;
             <input
+              className="TileSlider__input"
               min={2}
               onChange={this.changeSize}
               type="number"
