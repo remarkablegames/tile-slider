@@ -156,9 +156,9 @@ export default class TileSlider extends Component {
           <tbody>
             {puzzle &&
               puzzle.map((rows, y) => (
-                <tr>
+                <tr key={y}>
                   {rows.map((value, x) => (
-                    <td>
+                    <td key={x}>
                       <button
                         data-value={value}
                         data-x={x}
