@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "build": "NODE_ENV=production react-app-rewired build",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix",
+    "precommit": "lint-staged",
     "start": "NODE_ENV=development react-app-rewired start",
     "test": "react-app-rewired test --env=jsdom"
   },
