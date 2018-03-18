@@ -5,8 +5,8 @@ import './styles.css';
 export default class App extends Component {
   render() {
     return (
-      <main className="center" role="main">
-        <h1 className="heading text-center">Tile Slider</h1>
+      <main className="App-center" role="main">
+        <h1 className="App-heading text-center">Tile Slider</h1>
         <TileSlider size={3} />
       </main>
     );

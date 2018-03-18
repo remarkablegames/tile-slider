@@ -4,17 +4,13 @@
   position: relative;
 }
 
-.center {
+.App-center {
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.heading {
+.App-heading {
   font-size: 3em;
-}
-
-.text-center {
-  text-align: center;
 }
