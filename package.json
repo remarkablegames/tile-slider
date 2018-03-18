@@ -6,6 +6,7 @@
   "homepage": "https://remarkablegames.org/tile-slider/",
   "scripts": {
     "build": "NODE_ENV=production react-app-rewired build",
+    "clean": "rimraf build",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
@@ -27,6 +28,7 @@
     "react-app-rewired": "1.5.0",
     "react-dom": "16.2.0",
     "react-scripts": "1.1.1",
+    "rimraf": "2.6.2",
     "standard-version": "4.3.0"
   },
   "engines": {
