@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "A sliding tiles puzzle game.",
   "author": "Mark <mark@remarkablemark.org>",
+  "homepage": "https://remarkablegames.org/tile-slider/",
   "scripts": {
     "build": "NODE_ENV=production react-app-rewired build",
     "commitmsg": "commitlint -e $GIT_PARAMS",
@@ -25,6 +26,10 @@
     "react-app-rewired": "1.5.0",
     "react-dom": "16.2.0",
     "react-scripts": "1.1.1"
+  },
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5.3"
   },
   "private": true,
   "license": "MIT"
