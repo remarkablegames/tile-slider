@@ -4,13 +4,14 @@
   position: relative;
 }
 
-.App-center {
+.App__main {
   left: 50%;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.App-heading {
+.App__h1 {
   font-size: 3rem;
+  margin-bottom: 2rem;
 }
