@@ -147,13 +147,47 @@ export default class TileSlider extends Component {
     this.setState({ size: parseInt(target.value, 10) });
   };
 
+  /**
+   * Navigates puzzle using arrow keys.
+   *
+   * @param {SyntheticEvent}
+   */
+  handleKeyDown = ({ key, target }) => {
+    // Get x, y dataset from target element.
+    let { x, y } = target.dataset;
+
+    // Convert x and y to integers.
+    x = parseInt(x, 10);
+    y = parseInt(y, 10);
+
+    switch (key) {
+      case 'ArrowUp':
+        y -= 1;
+        break;
+      case 'ArrowDown':
+        y += 1;
+        break;
+      case 'ArrowLeft':
+        x -= 1;
+        break;
+      case 'ArrowRight':
+        x += 1;
+        break;
+      default:
+        return;
+    }
+
+    const button = this.tbody.querySelector(`[data-x="${x}"][data-y="${y}"]`);
+    if (button) setTimeout(() => button.focus());
+  };
+
   render() {
     const { puzzle, size } = this.state;
 
     return (
       <div className="text-center">
         <table className="block-center">
-          <tbody>
+          <tbody ref={element => (this.tbody = element)}>
             {puzzle &&
               puzzle.map((rows, y) => (
                 <tr key={y}>
@@ -165,6 +199,7 @@ export default class TileSlider extends Component {
                         data-x={x}
                         data-y={y}
                         onClick={this.handleClick}
+                        onKeyDown={this.handleKeyDown}
                       >
                         {value}
                       </button>
