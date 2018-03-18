@@ -1,6 +1,8 @@
 {
   "name": "tile-slider",
   "version": "0.0.0",
+  "description": "A sliding tiles puzzle game.",
+  "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
     "build": "NODE_ENV=production react-app-rewired build",
     "commitmsg": "commitlint -e $GIT_PARAMS",
@@ -24,5 +26,6 @@
     "react-dom": "16.2.0",
     "react-scripts": "1.1.1"
   },
-  "private": true
+  "private": true,
+  "license": "MIT"
 }
