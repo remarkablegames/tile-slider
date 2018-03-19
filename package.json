@@ -8,10 +8,11 @@
     "build": "NODE_ENV=production react-app-rewired build",
     "clean": "rimraf build",
     "commitmsg": "commitlint -e $GIT_PARAMS",
+    "deploy": "scripts/deploy.sh",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
     "precommit": "lint-staged",
-    "release": "scripts/release.sh",
+    "release": "standard-version --no-verify",
     "start": "NODE_ENV=development react-app-rewired start",
     "test": "react-app-rewired test --env=jsdom"
   },
