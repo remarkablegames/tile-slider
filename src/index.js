@@ -4,6 +4,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 const bootstrap = () => {
+  require('./helpers/ga');
   const App = require('./App').default;
   render(<App />, document.getElementById('root'));
 };
