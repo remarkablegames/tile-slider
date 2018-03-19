@@ -5,7 +5,7 @@
  */
 module.exports = (config, env) => {
   // replace `react` with `preact` in production
-  if (env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     config.resolve = {
       alias: {
         react: 'preact-compat',
