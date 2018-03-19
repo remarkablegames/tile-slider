@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { trackEvent } from '../helpers/ga';
 import './styles.css';
 
 /**
@@ -91,6 +92,8 @@ export default class TileSlider extends Component {
    * @param {SyntheticEvent}
    */
   handleClick = ({ target }) => {
+    trackEvent('puzzle', 'click');
+
     const puzzle = this.state.puzzle.map(row => row.slice());
     let { value, x, y } = target.dataset;
     value = parseInt(value, 10);
@@ -113,6 +116,7 @@ export default class TileSlider extends Component {
     this.setState({ puzzle }, () => {
       // check win state
       if (JSON.stringify(puzzle) === this.state.solutionJSON) {
+        trackEvent('puzzle', 'solve');
         setTimeout(() => alert('Puzzle solved!'), 100);
       }
     });
@@ -122,6 +126,7 @@ export default class TileSlider extends Component {
    * Shuffles current puzzle.
    */
   shufflePuzzle = () => {
+    trackEvent('puzzle', 'shuffle');
     this.setState(({ puzzle }) => generatePuzzle(puzzle.length));
   };
 
@@ -132,6 +137,7 @@ export default class TileSlider extends Component {
    */
   newPuzzle = event => {
     event.preventDefault();
+    trackEvent('puzzle', 'new', undefined, this.state.size);
     this.setState(({ size }) => ({
       ...generatePuzzle(size),
       ...generateSolution(size),
@@ -144,7 +150,10 @@ export default class TileSlider extends Component {
    * @param {SyntheticEvent}
    */
   changeSize = ({ target }) => {
-    this.setState({ size: parseInt(target.value, 10) });
+    const size = parseInt(target.value, 10);
+    if (size > 1) {
+      this.setState({ size });
+    }
   };
 
   /**
