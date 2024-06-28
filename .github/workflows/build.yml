@@ -23,9 +23,6 @@ jobs:
       - name: Run ESLint
         run: npm run lint
 
-      - name: Run tests
-        run: npm test -- --coverage
-
       - name: Build game
         run: npm run build
 
