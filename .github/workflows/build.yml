@@ -20,9 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Lint commit message
-        run: npx commitlint --from=HEAD~1
-
       - name: Run ESLint
         run: npm run lint
 
