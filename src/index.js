@@ -13,7 +13,6 @@ if (process.env.NODE_ENV === 'development' || !window.requirejs) {
   bootstrap();
 } else {
   window.requirejs(
-    ['https://cdn.polyfill.io/v2/polyfill.min.js?features=es5&flags=gated'],
     bootstrap,
     // http://requirejs.org/docs/api.html#errbacks
     bootstrap
